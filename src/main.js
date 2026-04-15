@@ -17,8 +17,8 @@ const defaultConfig = {
   windowTitle: 'eDEX-UI',
   theme: 'tron',
   shell: process.platform === 'win32' ? 'powershell.exe' : (process.env.SHELL || '/bin/bash'),
-  keyboard: true,
-  clock24: false,
+  keyboard: false, // I never use the on-screen keyboard, disable by default
+  clock24: true,   // 24h time makes more sense to me
   showTraffic: true,
   showFilesystem: true,
   allowTransparency: false
@@ -121,7 +121,4 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
-  }
-});
+  if (BrowserWindow.getAllWindows().length ==
