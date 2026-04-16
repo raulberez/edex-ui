@@ -21,7 +21,7 @@ const defaultConfig = {
   clock24: true,   // 24h time makes more sense to me
   showTraffic: true,
   showFilesystem: true,
-  allowTransparency: false
+  allowTransparency: true // transparency looks way better on my setup
 };
 
 // Config file path
@@ -116,9 +116,4 @@ app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
-app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length ==
+  
